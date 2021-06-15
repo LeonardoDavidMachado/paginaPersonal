@@ -1,10 +1,17 @@
 <nav>
   <mat-toolbar>
     <div class="botones-navbar">
-      <button mat-raised-button routerLink="" color="primary" class="boton-navegacion">Home</button>
-      <button mat-raised-button routerLink="/formacion" color="primary" class="boton-navegacion">Formacion</button>
-      <button mat-raised-button routerLink="/experiencia" color="primary" class="boton-navegacion">Experiencia</button>
-      <button mat-raised-button routerLink="/contacto" color="primary" class="boton-navegacion">Contacto</button>
+      <button mat-raised-button *ngIf="home"  routerLink=""  color="accent" class="boton-navegacion">Home</button>
+      <button mat-raised-button *ngIf="!home" routerLink=""  color="primary" class="boton-navegacion">Home</button>
+
+      <button mat-raised-button *ngIf="formacion" routerLink="/formacion" color="accent" class="boton-navegacion">Formacion</button>
+      <button mat-raised-button *ngIf="!formacion" routerLink="/formacion" color="primary" class="boton-navegacion">Formacion</button>
+      
+      <button mat-raised-button *ngIf="experiencia" routerLink="/experiencia" color="accent" class="boton-navegacion">Experiencia</button>
+      <button mat-raised-button *ngIf="!experiencia" routerLink="/experiencia" color="primary" class="boton-navegacion">Experiencia</button>
+
+      <button mat-raised-button *ngIf="contacto" routerLink="/contacto" color="accent" class="boton-navegacion">Contacto</button>
+      <button mat-raised-button *ngIf="!contacto" routerLink="/contacto" color="primary" class="boton-navegacion">Contacto</button>
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </mat-toolbar>
