@@ -10,12 +10,8 @@ import { FormacionComponent } from './components/formacion/formacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
+import { MaterialModule } from './material.module';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -30,12 +26,7 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSlideToggleModule,
-    MatCardModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
