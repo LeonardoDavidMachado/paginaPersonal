@@ -1,0 +1,35 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
+nav {
+  margin-top: 0px;
+}
+.boton-navegacion {
+    margin-left: 20px;
+}
+
+.boton-navegacion:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.boton-navegacion:active {
+    background-color: blue;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+body {
+  margin-top: 150%;
+}
