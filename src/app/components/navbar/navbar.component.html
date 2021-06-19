@@ -1,19 +1,59 @@
 <nav>
-  <mat-toolbar>
-    <div class="botones-navbar">
-      <button mat-raised-button *ngIf="home"  routerLink=""  color="accent" class="boton-navegacion">Home</button>
-      <button mat-raised-button *ngIf="!home" routerLink=""  color="primary" class="boton-navegacion">Home</button>
+  <div class="navbar">
+    <mat-toolbar>
+      <div class="botones-navbar">
+        <button mat-raised-button *ngIf="home" routerLink="" color="accent" class="boton-navegacion">Home</button>
+        <button mat-raised-button *ngIf="!home" routerLink="" color="primary" class="boton-navegacion">Home</button>
 
-      <button mat-raised-button *ngIf="formacion" routerLink="/formacion" color="accent" class="boton-navegacion">Formacion</button>
-      <button mat-raised-button *ngIf="!formacion" routerLink="/formacion" color="primary" class="boton-navegacion">Formacion</button>
-      
-      <button mat-raised-button *ngIf="experiencia" routerLink="/experiencia" color="accent" class="boton-navegacion">Experiencia</button>
-      <button mat-raised-button *ngIf="!experiencia" routerLink="/experiencia" color="primary" class="boton-navegacion">Experiencia</button>
+        <button mat-raised-button *ngIf="formacion" routerLink="/formacion" color="accent"
+          class="boton-navegacion">Formacion</button>
+        <button mat-raised-button *ngIf="!formacion" routerLink="/formacion" color="primary"
+          class="boton-navegacion">Formacion</button>
 
-      <button mat-raised-button *ngIf="contacto" routerLink="/contacto" color="accent" class="boton-navegacion">Contacto</button>
-      <button mat-raised-button *ngIf="!contacto" routerLink="/contacto" color="primary" class="boton-navegacion">Contacto</button>
-      <router-outlet #outlet="outlet"></router-outlet>
+        <button mat-raised-button *ngIf="experiencia" routerLink="/experiencia" color="accent"
+          class="boton-navegacion">Experiencia</button>
+        <button mat-raised-button *ngIf="!experiencia" routerLink="/experiencia" color="primary"
+          class="boton-navegacion">Experiencia</button>
+
+        <button mat-raised-button *ngIf="contacto" routerLink="/contacto" color="accent"
+          class="boton-navegacion">Contacto</button>
+        <button mat-raised-button *ngIf="!contacto" routerLink="/contacto" color="primary"
+          class="boton-navegacion">Contacto</button>
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </mat-toolbar>
+  </div>
+
+  <div class="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <div>
+      <mat-icon class="actual" *ngIf="home">home</mat-icon>
+      <mat-icon class="actual" *ngIf="formacion">school</mat-icon>
+      <mat-icon class="actual" *ngIf="experiencia">work</mat-icon>
+      <mat-icon class="actual" *ngIf="contacto">contact_mail</mat-icon>
     </div>
-  </mat-toolbar>
-</nav>
+    <mat-menu class="menu" #menu="matMenu">
 
+      <button mat-menu-item *ngIf="home" routerLink="" color="accent" class="boton-navegacion">Home</button>
+      <button mat-menu-item *ngIf="!home" routerLink="" color="primary" class="boton-navegacion">Home</button>
+
+      <button mat-menu-item *ngIf="formacion" routerLink="/formacion" color="accent"
+        class="boton-navegacion">Formacion</button>
+      <button mat-menu-item *ngIf="!formacion" routerLink="/formacion" color="primary"
+        class="boton-navegacion">Formacion</button>
+
+      <button mat-menu-item *ngIf="experiencia" routerLink="/experiencia" color="accent"
+        class="boton-navegacion">Experiencia</button>
+      <button mat-menu-item *ngIf="!experiencia" routerLink="/experiencia" color="primary"
+        class="boton-navegacion">Experiencia</button>
+
+      <button mat-menu-item *ngIf="contacto" routerLink="/contacto" color="accent"
+        class="boton-navegacion">Contacto</button>
+      <button mat-menu-item *ngIf="!contacto" routerLink="/contacto" color="primary"
+        class="boton-navegacion">Contacto</button>
+      <router-outlet #outlet="outlet"></router-outlet>
+    </mat-menu>
+  </div>
+</nav>
