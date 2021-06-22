@@ -1,7 +1,6 @@
 @media (max-width: 780px)  {
 
   .menu {
-    
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -17,6 +16,11 @@
   .navbar {
     display: none;
   }
+
+  .mobile {
+    display: none;
+  }
+
   nav {
     position: fixed;
     top: 0;
@@ -27,6 +31,10 @@
     width: 40px;
   }
 
+  section {
+    padding: 20% 10% 10% 10%;
+  }
+
 }
 
 @media (min-width: 780px) {
@@ -34,6 +42,11 @@
   .menu {
     display: none;
   }
+
+  section {
+    padding: 10%;
+  }
+
   nav {
     background: black;
     position: fixed;
@@ -43,19 +56,11 @@
     z-index: 2;
   }
 
-}
-
-.actual {
-  /* color:rgb(31, 30, 107); */
-}
-
-.example-spacer {
-    flex: 1 1 auto;
+  .desktop {
+    display: none;
   }
 
-  .example-icon {
-    padding: 0 14px;
-  }
+}
 
 .botones-navbar {
   display: flex;
@@ -78,14 +83,27 @@
     background-color: blue;
 }
 
-.example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+.card {
+  max-width: 400px;
+  box-shadow: 10px 30px 30px white;
+  margin-top: 10%;
+}
+
+.mitad {
+  width: 50%;
+  height: 50%;
+  padding-right: 20px;
+}
+
+.dosColumnas {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.bienvenido {
+  color: white;
+}
 
 body {
   padding-top: 0px;
@@ -93,8 +111,4 @@ body {
   width: 100%;
   min-height: 100%;
   height: auto;
-}
-
-section {
-  padding: 10%;
 }

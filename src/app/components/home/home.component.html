@@ -1,27 +1,27 @@
 <body>
   <app-navbar [actual]="1"></app-navbar>
   <section>
-    <mat-card class="example-card">
+    <h1 class="bienvenido">Bienvenido a mi página web!</h1>
+    <mat-card class="card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <mat-card-title>Sobre mi y esta página</mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
       <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
+        <mat-card-subtitle>
+          Soy un desarrollador fullstack y técnico electrónico cuya mayor experiencia laboral es el en frontend.
+          <br />
+        </mat-card-subtitle>
+        <div class="dosColumnas">
+          <p>
+            En esta página podes encontrar información sobre mí así como también ver una muestra de mi trabajo, está
+            creada con Angular y Material, y podes encontrar el código que la hace funcionar en mi github.
+          </p>
+          <img mat-card-image class="mitad" src="../../../assets/angular.svg">
+        </div>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
+      No te olvides de visitar la página con tu
+      <span class="mobile">celular</span>
+      <span class="desktop">pc</span> para verla en la otra versión!
     </mat-card>
-
-    
-
   </section>
 </body>
