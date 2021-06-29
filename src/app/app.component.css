@@ -89,6 +89,29 @@
   margin-top: 10%;
 }
 
+table {
+  width: 100%;
+}
+
+
+.barra {
+  width: 20%;
+}
+
+.logo {
+  width: 40%;
+}
+
+.encabezado {
+  background-color: darkviolet;
+}
+
+.cardFormacion {
+  width: auto;
+  box-shadow: 10px 30px 30px rgb(167, 66, 66);
+  margin-top: 5%;
+}
+
 .mitad {
   width: 50%;
   height: 50%;
@@ -99,6 +122,16 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+}
+
+.columnasResponsivas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.columnaDos {
+  margin-left: 20%;
 }
 
 .bienvenido {

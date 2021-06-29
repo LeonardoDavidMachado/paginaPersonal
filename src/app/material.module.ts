@@ -7,6 +7,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule,
+    MatTableModule,
+    MatProgressBarModule
 
   ]
 })
