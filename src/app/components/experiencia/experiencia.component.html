@@ -1,3 +1,22 @@
 <body>
     <app-navbar [actual]="3"></app-navbar>
+    <section>
+        <article>
+            <div class="texto">
+                <h1>Nota</h1>
+                <p>En esta página solo incluí mi experiencia laboral como desarrollador, excluyendo los trabajos previos ajenos al sector.</p>
+            </div>
+        </article>
+        <div *ngFor="let experiencia of experiencias">
+            <mat-card class="card">
+                <div class="header-card">
+                    <mat-card-title class="empresa">{{experiencia.empresa}}</mat-card-title>
+                    <mat-card-subtitle class="puesto">Puesto: {{experiencia.puesto}}</mat-card-subtitle>
+                </div>
+                <img src="../../../assets/{{experiencia.logo}}">
+                <p>Inicio: {{experiencia.inicio}} - Fin: {{experiencia.fin}}</p>
+                <p>{{experiencia.descripcion}}</p>
+            </mat-card>
+        </div>
+    </section>
 </body>
