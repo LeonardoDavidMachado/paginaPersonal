@@ -1,3 +1,14 @@
 <body>
     <app-navbar [actual]="4"></app-navbar>
+    <section>
+        <div class="contactoLista">
+            <div *ngFor="let contacto of contactos">
+                <div class="contactoItem">
+                    <mat-icon class="iconoContacto" [svgIcon]=contacto.logo></mat-icon>
+                    <mat-card-subtitle> <a target="_blank" href={{contacto.enlace}}>
+                            {{contacto.descripcion}}</a> </mat-card-subtitle>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
