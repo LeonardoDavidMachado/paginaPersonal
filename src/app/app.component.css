@@ -172,3 +172,27 @@ body {
   min-height: 100%;
   height: auto;
 }
+
+.iconoContacto {
+  font-size: x-large;
+  position: absolute;
+  left: 10%;
+}
+
+.contactoLista {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contactoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+
+a {
+  color: aliceblue;
+}
