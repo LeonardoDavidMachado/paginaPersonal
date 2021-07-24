@@ -4,86 +4,119 @@
         <div class="centrado">
             <h2 class="titulo">Formación</h2>
         </div>
-        <mat-tab-group backgroundColor="accent">
-            <mat-tab label="UNIVERSITARIA Y CURSOS">
-                <br /><br />
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                    <ng-container matColumnDef="nombre">
-                        <th class="encabezado" mat-header-cell *matHeaderCellDef> Nombre </th>
-                        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-                    </ng-container>
+        <div class="desktop">
+            <mat-tab-group backgroundColor="accent">
+                <mat-tab label="UNIVERSITARIA Y CURSOS">
+                    <br /><br />
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="nombre">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Nombre </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                        </ng-container>
 
-                    <ng-container matColumnDef="establecimiento">
-                        <th class="encabezado" mat-header-cell *matHeaderCellDef> Establecimiento </th>
-                        <td mat-cell *matCellDef="let element"> {{element.establecimiento}} </td>
-                    </ng-container>
+                        <ng-container matColumnDef="establecimiento">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Establecimiento </th>
+                            <td mat-cell *matCellDef="let element"> {{element.establecimiento}} </td>
+                        </ng-container>
 
-                    <ng-container matColumnDef="fechaInicio">
-                        <th class="encabezado" mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
-                        <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
-                    </ng-container>
+                        <ng-container matColumnDef="fechaInicio">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+                        </ng-container>
 
-                    <ng-container matColumnDef="fechaFin">
-                        <th class="encabezado" mat-header-cell *matHeaderCellDef> Fecha de finalización </th>
-                        <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
-                    </ng-container>
+                        <ng-container matColumnDef="fechaFin">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Fecha de finalización </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
+                        </ng-container>
 
-                    <ng-container matColumnDef="logo">
-                        <th class="encabezado" mat-header-cell *matHeaderCellDef> Logo </th>
+                        <ng-container matColumnDef="logo">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Logo </th>
 
-                        <td mat-cell *matCellDef="let element"><img class="logo" src="../../../assets/{{element.logo}}">
-                        </td>
-                    </ng-container>
+                            <td mat-cell *matCellDef="let element"><img class="logo"
+                                    src="../../../assets/{{element.logo}}">
+                            </td>
+                        </ng-container>
 
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
-            </mat-tab>
-            <mat-tab class="label" label="LENGUAJES">
-                <mat-card class="cardFormacion">
-                    <ul>
-                        <li>C</li>
-                        <li>C++</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>Phyton</li>
-                    </ul>
-                </mat-card>
-
-            </mat-tab>
-            <mat-tab class="label" label="BASES DE DATOS">
-                <mat-card class="cardFormacion">
-                    <ul>
-                        <li>MySQL</li>
-                        <li>Mongo</li>
-                    </ul>
-                </mat-card>
-
-            </mat-tab>
-            <mat-tab class="label" label="FRAMEWORKS Y TECNOLOGIAS">
-                <mat-card class="cardFormacion">
-                    <ul>
-                        <div class="columnasResponsivas">
-                            <div>
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>React</li>
-                                <li>React Native</li>
-                                <li>Angular</li>
-                            </div>
-                            <div class="columnaDos">
-                                <li>Docker</li>
-                                <li>Material</li>
-                                <li>Ionic</li>
-                                <li>Cordova</li>
-                                <li>Selenium</li>
-                            </div>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </mat-tab>
+                <mat-tab class="label" label="LENGUAJES">
+                    <mat-card class="cardFormacion">
+                        <div *ngFor="let lenguaje of lenguajes">
+                            <ul>
+                                <li>{{lenguaje}}</li>
+                            </ul>
                         </div>
-                    </ul>
-                </mat-card>
+                    </mat-card>
+                </mat-tab>
+                <mat-tab class="label" label="BASES DE DATOS">
+                    <mat-card class="cardFormacion">
+                        <div *ngFor="let base of basesDeDatos">
+                            <ul>
+                                <li>{{base}}</li>
+                            </ul>
+                        </div>
+                    </mat-card>
+                </mat-tab>
+                <mat-tab class="label" label="FRAMEWORKS Y TECNOLOGIAS">
+                    <mat-card class="cardFormacion">
+                        <ul>
+                            <div *ngFor="let item of frameTec">
+                                <li>{{item}}</li>
+                                <br />
+                            </div>
+                        </ul>
+                    </mat-card>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
 
-            </mat-tab>
-        </mat-tab-group>
+        <div class="mobile">
+
+            <mat-card class="cardFormacion">
+                <mat-card-title>Universitaria y cursos</mat-card-title>
+                <div *ngFor="let data of dataSource">
+                    <hr />
+                    {{data.nombre}}
+                    <div>
+                        {{data.establecimiento}}
+                        <br />
+                        {{data.fechaInicio}} - {{data.fechaFin}}
+                        <br />
+                    </div>
+                    <img mat-card-image class="logo" src="../../../assets/{{data.logo}}">
+                    <br />
+                    <br />
+                </div>
+            </mat-card>
+            <mat-card class="cardFormacion">
+                <mat-tab-group backgroundColor="accent">
+                    <mat-tab class="label" label="LENGUAJES">
+                        <ul>
+                            <div *ngFor="let lenguaje of lenguajes">
+                                <li>{{lenguaje}}</li>
+                            </div>
+                        </ul>
+                    </mat-tab>
+                    <mat-tab class="label" label="DATABASES">
+                        <ul>
+                            <div *ngFor="let base of basesDeDatos">
+                                <li>{{base}}</li>
+                            </div>
+                        </ul>
+                    </mat-tab>
+                </mat-tab-group>
+                <br />
+                <hr /><br />
+                <mat-card-title>Frameworks y tecnologías</mat-card-title>
+                <ul>
+                    <div *ngFor="let item of frameTec">
+                        <li>{{item}}</li>
+                    </div>
+                </ul>
+            </mat-card>
+        </div>
 
     </section>
 </body>

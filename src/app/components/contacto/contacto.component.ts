@@ -9,7 +9,6 @@ export interface Contacto {
 }
 
 const CONTACTO: Contacto[] =[
-  { descripcion: "leondav@hotmail.com", enlace: "leondav@hotmail.com", logo: "email"},
   { descripcion: "Linkedin", enlace: "https://www.linkedin.com/in/leonardo-david-machado-b119681b3/", logo: "linkedin"},
   { descripcion: "Github", enlace: "https://github.com/LeonardoDavidMachado", logo: "github"},
 ];
