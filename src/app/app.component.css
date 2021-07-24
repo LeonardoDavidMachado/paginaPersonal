@@ -1,16 +1,7 @@
 @media (max-width: 780px)  {
 
   .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 70px;
-    border-radius: 40%;
-    background: rgb(22,93,19);
-    background: linear-gradient(0deg, rgba(22,93,19,0.8476190476190476) 22%, rgba(253,29,29,1) 41%, rgba(252,176,69,1) 86%);
-    margin-bottom: 20px;
+    color: white;
   }
 
   .navbar {
@@ -53,6 +44,8 @@
     top: 0;
     left: 0;
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     z-index: 2;
   }
 
@@ -70,12 +63,17 @@
   width: 100%;
 }
 
+mat-toolbar {
+  width: 100%;
+  
+}
+
 .boton-navegacion {
     margin-left: 20px;
 }
 
 .boton-navegacion:hover {
-    background-color: yellow;
+    background-color: red;
     color: black;
 }
 
@@ -171,6 +169,7 @@ body {
   width: 100%;
   min-height: 100%;
   height: auto;
+  background-color: darkblue;
 }
 
 .iconoContacto {
@@ -195,4 +194,5 @@ body {
 
 a {
   color: aliceblue;
+  text-decoration: none;
 }
