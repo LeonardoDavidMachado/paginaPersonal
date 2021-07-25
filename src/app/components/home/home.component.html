@@ -1,10 +1,11 @@
-<app-navbar [actual]="1"></app-navbar>
 <section>
   <div id="home">
-    <h1 class="bienvenido">Bienvenido a mi página web!</h1>
-    <mat-card class="card">
+    <div class="centrado">
+      <h1 class="bienvenido">¡Bienvenido a mi página web!</h1>
+    </div>
+    <mat-card class="cardCentrada">
       <mat-card-header>
-        <mat-card-title>Sobre mi y esta página</mat-card-title>
+        <mat-card-title>Sobre mí y esta página</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <mat-card-subtitle>
@@ -13,15 +14,15 @@
         </mat-card-subtitle>
         <div class="dosColumnas">
           <p>
-            En esta página podes encontrar información sobre mí así como también ver una muestra de mi trabajo, está
-            creada con Angular y Material, y podes encontrar el código que la hace funcionar en mi github.
+            En esta página podés encontrar información sobre mí así como también ver una muestra de mi trabajo, está
+            creada con Angular y Material, y podes encontrar su código en mi <a class="enlace" target="_blank" href="https://github.com/LeonardoDavidMachado/paginaPersonal">github</a>.
           </p>
           <img mat-card-image class="mitad" src="../../../assets/angular.svg">
         </div>
       </mat-card-content>
       No te olvides de visitar la página con tu
-      <span class="mobile">celular</span>
-      <span class="desktop">pc</span> para verla en la otra versión!
+      <span class="desktop">celular</span>
+      <span class="mobile">pc</span> para verla en la otra versión!
     </mat-card>
   </div>
 </section>
