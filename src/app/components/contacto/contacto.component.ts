@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
-
-export interface Contacto {
-  descripcion: string,
-  enlace: string,
-  logo: string
-}
+import { Contacto } from '../../api/interfaces';
 
 const CONTACTO: Contacto[] =[
   { descripcion: "Linkedin", enlace: "https://www.linkedin.com/in/leonardo-david-machado-b119681b3/", logo: "linkedin"},
