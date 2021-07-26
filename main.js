@@ -158,7 +158,7 @@ function ExperienciaComponent_div_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](experiencia_r1.descripcion);
 } }
 const EXPERIENCIA = [
-    { empresa: "OneInfo Consulting", inicio: "Marzo 2021", fin: "", puesto: "Desarrollador web fullstack", descripcion: "Desarrollo de frontend tanto en React como en Angular. Trato con clientes en reuniones y demostraciones. Ayudé a otros colaboradores de la empresa que requerían asistencia en proyectos ajenos a mi. OneInfo Consulting es mi primer trabajo como desarrollador.", logo: "oneinfoconsulting.PNG" },
+    { empresa: "OneInfo Consulting", inicio: "Marzo 2021", fin: "", puesto: "Desarrollador web fullstack", descripcion: "Desarrollo de frontend tanto en React como en Angular. Trato con clientes en reuniones y demostraciones. Ayudé a otros colaboradores de la empresa que requerían asistencia en proyectos ajenos a mi. OneInfo Consulting es mi primer trabajo como desarrollador.", logo: "oneinfoconsulting.png" },
 ];
 class ExperienciaComponent {
     constructor() { }
