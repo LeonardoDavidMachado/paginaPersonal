@@ -17,6 +17,7 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.experiencias= EXPERIENCIA;
+    this.experiencias[0].logo = this.experiencias[0].logo.toLowerCase();
   }
 
 }

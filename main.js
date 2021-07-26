@@ -164,6 +164,7 @@ class ExperienciaComponent {
     constructor() { }
     ngOnInit() {
         this.experiencias = EXPERIENCIA;
+        this.experiencias[0].logo = this.experiencias[0].logo.toLowerCase();
     }
 }
 ExperienciaComponent.ɵfac = function ExperienciaComponent_Factory(t) { return new (t || ExperienciaComponent)(); };
