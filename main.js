@@ -62,7 +62,7 @@ class HomeComponent {
     }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(); };
-HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 26, vars: 0, consts: [["id", "home"], [1, "centrado"], [1, "bienvenido"], [1, "cardCentrada"], [1, "dosColumnas"], ["target", "_blank", "href", "https://github.com/LeonardoDavidMachado/paginaPersonal", 1, "enlace"], ["mat-card-image", "", "src", "../../../assets/angular.svg", 1, "mitad"], [1, "desktop"], [1, "mobile"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 26, vars: 0, consts: [["id", "home"], [1, "centrado"], [1, "bienvenido"], [1, "cardCentrada"], [1, "dosColumnas"], ["target", "_blank", "href", "https://github.com/LeonardoDavidMachado/paginaPersonal", 1, "enlace"], ["mat-card-image", "", "src", "../../../Assets/angular.svg", 1, "mitad"], [1, "desktop"], [1, "mobile"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
