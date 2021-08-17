@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Formacion } from '../../api/interfaces';
+import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
 
 const FORMACION: Formacion[] = [
   { posicion: 1, nombre: 'INGENIERIA EN SISTEMAS', establecimiento: 'UTN FRBA', fechaInicio: '2021', fechaFin: '', logo: 'UTNFRBA.png', },
@@ -23,9 +24,13 @@ export class FormacionComponent implements OnInit {
   basesDeDatos = ["MySQL", "MongoDB"];
   frameTec = ["Node.js", "Express", "React", "React Native", "Angular", "Material", "Ionic", "Cordova", "Selenium", "Docker"];
 
-  constructor() { }
+  isMobile: boolean = false;
+  constructor(
+    private mobileDetector: MobileDetectorService,
+  ) { }
 
   ngOnInit(): void {
+    this.isMobile = this.mobileDetector.isMobile();
   }
 
 }

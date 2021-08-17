@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   home=1;
-  constructor() { }
+  isMobile: boolean = false;
+  constructor(
+    private mobileDetector: MobileDetectorService,
+  ) { }
 
   ngOnInit(): void {
+    this.isMobile = this.mobileDetector.isMobile();
   }
 
 }
