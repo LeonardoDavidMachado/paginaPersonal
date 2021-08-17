@@ -21,8 +21,8 @@
         </div>
       </mat-card-content>
       No te olvides de visitar la página con tu
-      <span class="desktop">celular</span>
-      <span class="mobile">pc</span> para verla en la otra versión!
+      <span *ngIf="isMobile">celular</span>
+      <span *ngIf="!isMobile">pc</span> para verla en la otra versión!
     </mat-card>
   </div>
 </section>

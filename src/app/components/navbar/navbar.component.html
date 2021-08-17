@@ -1,5 +1,5 @@
 <nav>
-  <div class="navbar">
+  <div *ngIf="!isMobile" class="navbar">
       <div class="botones-navbar">
         <button mat-button color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
 
@@ -15,7 +15,7 @@
       </div>
   </div>
 
-  <div class="menu">
+  <div *ngIf="isMobile" class="menu">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
