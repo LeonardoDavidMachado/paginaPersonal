@@ -4,3 +4,7 @@
     background: rgb(27,20,142);
     background: linear-gradient(90deg, rgba(27,20,142,1) 16%, rgba(49,175,114,1) 78%, rgba(255,41,0,1) 100%);
 } */
+
+p, h2 {
+    color: white;
+}

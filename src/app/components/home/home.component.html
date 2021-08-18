@@ -3,26 +3,23 @@
     <div class="centrado">
       <h1 class="bienvenido">¡Bienvenido a mi página web!</h1>
     </div>
-    <mat-card class="cardCentrada">
-      <mat-card-header>
-        <mat-card-title>Sobre mí y esta página</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-card-subtitle>
-          Soy un desarrollador fullstack y técnico electrónico cuya mayor experiencia laboral es el en frontend.
+    <div class="cardCentrada">
+        <h2>Sobre mí y esta página</h2>
+        <h4 class="chartreuse">
+          Soy un desarrollador fullstack y técnico electrónico con experiencia laboral en el frontend.
           <br />
-        </mat-card-subtitle>
+        </h4>
         <div class="dosColumnas">
           <p>
-            En esta página podés encontrar información sobre mí así como también ver una muestra de mi trabajo, está
-            creada con Angular y Material, y podes encontrar su código en mi <a class="enlace" target="_blank" href="https://github.com/LeonardoDavidMachado/paginaPersonal">github</a>.
+            Acá podés encontrar información sobre mí y ver una muestra de mi trabajo, está
+            creada con Angular Material. Se puede ver el código en mi <a class="enlace" target="_blank" href="https://github.com/LeonardoDavidMachado/paginaPersonal">github</a>.
           </p>
-          <img mat-card-image class="mitad" src="./assets/angular.svg">
+          <img class="mitad" src="./assets/angular.svg">
         </div>
-      </mat-card-content>
-      No te olvides de visitar la página con tu
+      <p>¡No te olvides de visitarla con tu
       <span *ngIf="isMobile">celular</span>
       <span *ngIf="!isMobile">pc</span> para verla en la otra versión!
-    </mat-card>
+    </p>
+    </div>
   </div>
 </section>

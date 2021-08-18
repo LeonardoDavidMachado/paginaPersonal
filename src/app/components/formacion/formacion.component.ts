@@ -23,7 +23,7 @@ export class FormacionComponent implements OnInit {
   lenguajes = ["C", "C++", "Java", "JavaScript", "TypeScript", "Phyton"];
   basesDeDatos = ["MySQL", "MongoDB"];
   frameTec = ["Node.js", "Express", "React", "React Native", "Angular", "Material", "Ionic", "Cordova", "Selenium", "Docker"];
-
+  position= 0;
   isMobile: boolean = false;
   constructor(
     private mobileDetector: MobileDetectorService,
@@ -31,6 +31,31 @@ export class FormacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMobile = this.mobileDetector.isMobile();
+  }
+
+  change(destiny: number) {
+    const BACK = 0;
+    const FORWARD = 1;
+    const LENGTH = 2;
+    switch(destiny) {
+      case BACK: {
+        if(this.position>0) {
+          this.position--;
+        } else {
+          this.position = 0;
+        }
+        break;
+      }
+      case FORWARD: {
+        if(this.position<LENGTH) {
+          this.position++;
+        } else {
+          this.position= 2;
+        }
+        break;
+      }
+    }
+
   }
 
 }

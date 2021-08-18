@@ -31,10 +31,6 @@
     width: 40px;
   }
 
-  section {
-    padding: 20% 10% 10% 10%;
-  }
-
 }
 
 @media (min-width: 780px) {
@@ -52,10 +48,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-  }
-
-  section {
-    padding: 10%;
   }
 
   nav {
@@ -111,15 +103,43 @@
 .cardCentrada {
   margin: auto;
   width: 50%;
-  max-width: 400px;
+  /* max-width: 400px; */
   min-width: 250px;
-  box-shadow: 10px 30px 30px rgb(179, 66, 66);
+  /* box-shadow: 10px 30px 30px rgb(179, 66, 66); */
   margin-top: 10%;
-  background-color: rgba(101, 49, 168, 0.781);
+  /* background-color: rgba(101, 49, 168, 0.781); */
+  background-color: transparent;
+}
+
+section {
+  padding: 6% 10% 4% 10%;
 }
 
 table {
   width: 100%;
+}
+
+
+.botones-slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+}
+
+.paginator {
+  color: darkorange;
+}
+
+.chartreuse {
+  color:chartreuse;
+}
+
+.botonSlider {
+  background-color: white;
 }
 
 
