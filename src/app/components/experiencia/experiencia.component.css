@@ -5,10 +5,11 @@
     background: linear-gradient(90deg, rgba(49,175,114,1) 10%, rgba(255,41,0,1) 50%,  rgba(27,20,142,1)100%);
 } */
 
-section {
+.responsive {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 0%;
 }
