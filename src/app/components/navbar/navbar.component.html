@@ -1,37 +1,33 @@
 <nav>
   <div *ngIf="!isMobile" class="navbar">
-      <div class="botones-navbar">
-        <button mat-button color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
-
-        <button mat-button color="primary"
-          class="boton-navegacion"> <a href="#formacion">Formación</a> </button>
-
-        <button mat-button color="primary"
-          class="boton-navegacion"><a href="#experiencia">Experiencia</a> </button>
-
-        <button mat-button color="primary"
-          class="boton-navegacion"><a href="#contacto">Contacto</a></button>
-        <!-- <router-outlet #outlet="outlet"></router-outlet> -->
-      </div>
+    <div class="botones-navbar">
+      <button mat-button color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
+      <button mat-button color="primary" class="boton-navegacion"> <a href="#formacion">Formación</a> </button>
+      <button mat-button color="primary" class="boton-navegacion"><a href="#experiencia">Experiencia</a> </button>
+      <button mat-button color="primary" class="boton-navegacion"><a href="#contacto">Contacto</a></button>
+      <button mat-button color="primary" class="boton-navegacion" (click)="changeTheme()">
+        <mat-icon class="mode" *ngIf="!isDark">dark_mode</mat-icon>
+        <mat-icon class="mode" *ngIf="isDark">light_mode</mat-icon>
+      </button>
+    </div>
   </div>
 
-  <div *ngIf="isMobile" class="menu">
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu class="menu" #menu="matMenu">
+  <div *ngIf="isMobile">
+    <div class="menu">
+      <button class="menuIcon" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn" class="boton-navegacion" (click)="changeTheme()">
+        <mat-icon class="mode" *ngIf="!isDark">dark_mode</mat-icon>
+        <mat-icon class="mode" *ngIf="isDark">light_mode</mat-icon>
+      </button>
+    </div>
 
+    <mat-menu #menu="matMenu">
       <button mat-menu-item color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
-
-      <button mat-menu-item color="primary"
-        class="boton-navegacion"><a href="#formacion">Formacion</a></button>
-
-      <button mat-menu-item  color="primary"
-        class="boton-navegacion"><a href="#experiencia">Experiencia</a></button>
-
-      <button mat-menu-item color="primary"
-        class="boton-navegacion"><a href="#contacto">Contacto</a></button>
-      <!-- <router-outlet #outlet="outlet"></router-outlet> -->
+      <button mat-menu-item color="primary" class="boton-navegacion"><a href="#formacion">Formacion</a></button>
+      <button mat-menu-item color="primary" class="boton-navegacion"><a href="#experiencia">Experiencia</a></button>
+      <button mat-menu-item color="primary" class="boton-navegacion"><a href="#contacto">Contacto</a></button>
     </mat-menu>
   </div>
 </nav>

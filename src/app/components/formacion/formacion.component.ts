@@ -14,7 +14,7 @@ const FORMACION: Formacion[] = [
 @Component({
   selector: 'app-formacion',
   templateUrl: './formacion.component.html',
-  styleUrls: ['./formacion.component.css']
+  styleUrls: ['./formacion.component.scss']
 })
 export class FormacionComponent implements OnInit {
 

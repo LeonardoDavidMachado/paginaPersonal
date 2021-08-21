@@ -11,7 +11,7 @@ const CONTACTO: Contacto[] =[
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.css']
+  styleUrls: ['./contacto.component.scss']
 })
 export class ContactoComponent implements OnInit {
 

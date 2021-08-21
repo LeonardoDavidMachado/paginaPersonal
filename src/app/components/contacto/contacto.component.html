@@ -3,17 +3,17 @@
         <div class="centrado">
             <h1 class="titulo">Contacto</h1>
         </div>
-        <br/>
+        <br />
         <div class="contactoLista">
             <div class="contactoItem">
                 <mat-icon class="iconoContacto" svgIcon="email"></mat-icon>
-                <mat-card-subtitle> <a target="_blank" href="mailto:leondav@hotmail.com">
+                <mat-card-subtitle> <a target="_blank" class="text" href="mailto:leondav@hotmail.com">
                         E-mail</a> </mat-card-subtitle>
             </div>
             <div *ngFor="let contacto of contactos">
                 <div class="contactoItem">
                     <mat-icon class="iconoContacto" [svgIcon]=contacto.logo></mat-icon>
-                    <mat-card-subtitle> <a target="_blank" href={{contacto.enlace}}>
+                    <mat-card-subtitle> <a target="_blank" class="text" href={{contacto.enlace}}>
                             {{contacto.descripcion}}</a> </mat-card-subtitle>
                 </div>
             </div>
