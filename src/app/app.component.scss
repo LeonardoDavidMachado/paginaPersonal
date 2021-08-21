@@ -1,17 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Dancing+Script&display=swap');
 
+//variables
+// $bodyBackground : darkblue;
+$bodyBackground: var(--bodyBackground);
+$title: var(--title);
+$textColor: var(--textColor);
+$subtitleColor: var(--subtitleColor);
+$formacionColor: var(--formacionColor);
+$shadowColor: var(--shadowColor);
+$articleColor: var(--articleColor);
+$iconColor: var(--iconColor);
+$modeColor: var(--modeColor);
+$allan: 'Allan', cursive;
+$dancing: 'Dancing Script', cursive;
+$size: 300px;
+
+
+body {
+  padding-top: 0px;
+  padding-left: 0px;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background-color: $bodyBackground;
+}
+
+.text {
+  color: $textColor;
+}
+
+.bienvenido {
+  color: $textColor;
+  font-family: $dancing;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.mode {
+  color: $modeColor;
+}
+
 @media (max-width: 780px)  {
 
   .iconoContacto {
     font-size: x-large;
     position: absolute;
     left: 10%;
+    background-color: $iconColor;
+    border-radius: 50%;
   }
 
   .contactoLista {
-    width: 300px;
-    height: 300px;
+    width: $size;
+    height: $size;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -19,16 +61,18 @@
 
   .menu {
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 
   nav {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 2;
     margin: 0;
-    width: 40px;
   }
 
 }
@@ -40,11 +84,12 @@
     position: relative;
     left: -10px;
     top: -8px;
+    background-color: $iconColor;
+    border-radius: 50%;
   }
 
   .contactoLista {
     width:100%;
-    /* height: 300px; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -66,13 +111,14 @@
 .centrado {
   text-align: center;
 }
+
 .titulo {
-  color:rgb(228, 210, 139);
-  text-decoration: underline rgb(228, 210, 139);
-  font-family: 'Allan', cursive;
+  color: $title;
+  font-family: $allan;
   font-size: 40px;
   margin-bottom: 30px;
 }
+
 .botones-navbar {
   display: flex;
   flex-direction: row;
@@ -83,31 +129,29 @@
 
 .boton-navegacion {
     margin-left: 20px;
-}
 
-.boton-navegacion:hover {
-    background-color: red;
-    color: black;
-}
+    &:hover {
+        background-color: red;
+        color: black;
+    }
 
-.boton-navegacion:active {
-    background-color: blue;
+    &:active {
+        background-color: blue;
+    }
 }
 
 .card {
   max-width: 400px;
-  box-shadow: 10px 30px 30px white;
+  box-shadow: 10px 30px 30px $shadowColor;
   margin-top: 10%;
+  background-color: $formacionColor;
 }
 
 .cardCentrada {
   margin: auto;
   width: 50%;
-  /* max-width: 400px; */
   min-width: 250px;
-  /* box-shadow: 10px 30px 30px rgb(179, 66, 66); */
   margin-top: 10%;
-  /* background-color: rgba(101, 49, 168, 0.781); */
   background-color: transparent;
 }
 
@@ -117,8 +161,8 @@ section {
 
 table {
   width: 100%;
+  background-color: $formacionColor;
 }
-
 
 .botones-slider {
   display: flex;
@@ -134,8 +178,8 @@ table {
   color: darkorange;
 }
 
-.chartreuse {
-  color:chartreuse;
+h4 {
+  color:$subtitleColor;
 }
 
 .botonSlider {
@@ -160,18 +204,11 @@ table {
   width: auto;
   box-shadow: 10px 30px 30px rgb(167, 66, 66);
   margin-top: 5%;
+  background-color: $formacionColor;
 }
 
 .header-card {
   margin-left: 10%;
-}
-
-article {
-  background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 14%, rgba(224,224,224,1) 29%, rgba(54,54,54,1) 86%);
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
 }
 
 .empresa {
@@ -211,21 +248,6 @@ article {
   margin-left: 20%;
 }
 
-.bienvenido {
-  color: white;
-  font-family: 'Dancing Script', cursive;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-body {
-  padding-top: 0px;
-  padding-left: 0px;
-  width: 100%;
-  min-height: 100%;
-  height: auto;
-  background-color: darkblue;
-}
 
 .contactoItem {
   display: flex;
@@ -240,4 +262,8 @@ a {
 
 .enlace {
   color: rgba(44, 199, 134, 0.781);
+}
+
+.menuIcon {
+  color: $textColor;
 }

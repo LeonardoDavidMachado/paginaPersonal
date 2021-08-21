@@ -7,7 +7,7 @@ import { MobileDetectorService } from '../../services/mobileDetector/mobile-dete
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 
@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   contacto = false;
   url = "";
   isMobile: boolean = false;
+  isDark = true;
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -30,6 +31,14 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.documentElement.style.setProperty('--bodyBackground', 'darkblue');
+    document.documentElement.style.setProperty('--textColor', 'white');
+    document.documentElement.style.setProperty('--subtitleColor', 'chartreuse');
+    document.documentElement.style.setProperty('--formacionColor', '#424242');
+    document.documentElement.style.setProperty('--title', 'rgb(228, 210, 139)');
+    document.documentElement.style.setProperty('--shadowColor', 'white');
+    document.documentElement.style.setProperty('--iconColor', 'darkblue');
+    document.documentElement.style.setProperty('--modeColor', 'yellow');
     this.isMobile = this.mobileDetector.isMobile();
     switch (this.actual) {
       case 1:
@@ -63,6 +72,29 @@ export class NavbarComponent implements OnInit {
         this.contacto = false;
         break;
     }
+  }
+
+  changeTheme() {
+    if(this.isDark) {
+      document.documentElement.style.setProperty('--bodyBackground', 'whitesmoke');
+      document.documentElement.style.setProperty('--textColor', 'black');
+      document.documentElement.style.setProperty('--subtitleColor', 'darkblue');
+      document.documentElement.style.setProperty('--title', 'red');
+      document.documentElement.style.setProperty('--formacionColor', '#7c96d9');
+      document.documentElement.style.setProperty('--shadowColor', 'red');
+      document.documentElement.style.setProperty('--iconColor', 'black');
+      document.documentElement.style.setProperty('--modeColor', 'white');
+    } else {
+      document.documentElement.style.setProperty('--bodyBackground', 'darkblue');
+      document.documentElement.style.setProperty('--textColor', 'white');
+      document.documentElement.style.setProperty('--subtitleColor', 'chartreuse');
+      document.documentElement.style.setProperty('--title', 'rgb(228, 210, 139)');
+      document.documentElement.style.setProperty('--formacionColor', '#424242');
+      document.documentElement.style.setProperty('--shadowColor', 'white');
+      document.documentElement.style.setProperty('--iconColor', 'darkblue');
+      document.documentElement.style.setProperty('--modeColor', 'yellow');
+    }
+    this.isDark = !this.isDark
   }
 
 }
