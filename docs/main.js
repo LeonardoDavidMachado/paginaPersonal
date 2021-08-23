@@ -904,13 +904,13 @@ function NavbarComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mat-icon", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "dark_mode");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "light_mode");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-slide-toggle", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NavbarComponent_div_1_Template_mat_slide_toggle_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r2.changeTheme(); })("ngModelChange", function NavbarComponent_div_1_Template_mat_slide_toggle_ngModelChange_17_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.isChecked = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-icon", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "light_mode");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "dark_mode");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1032,7 +1032,7 @@ class NavbarComponent {
     }
 }
 NavbarComponent.ɵfac = function NavbarComponent_Factory(t) { return new (t || NavbarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_mobileDetector_mobile_detector_service__WEBPACK_IMPORTED_MODULE_1__["MobileDetectorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_themeChanger_theme_changer_service__WEBPACK_IMPORTED_MODULE_2__["ThemeChangerService"])); };
-NavbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: NavbarComponent, selectors: [["app-navbar"]], inputs: { actual: "actual" }, decls: 3, vars: 2, consts: [["class", "navbar", 4, "ngIf"], [4, "ngIf"], [1, "navbar"], [1, "botones-navbar"], ["mat-button", "", "color", "primary", 1, "boton-navegacion"], ["href", "#home"], ["href", "#formacion"], ["href", "#experiencia"], ["href", "#contacto"], [1, "themeSlide"], [1, "moon"], [3, "ngModel", "click", "ngModelChange"], [1, "sun"], [1, "menu"], ["mat-icon-button", "", 1, "menuIcon", 3, "matMenuTriggerFor"], ["mat-mini-fab", "", "color", "primary", 1, "boton-navegacion", 3, "click"], ["class", "mode", 4, "ngIf"], ["menu", "matMenu"], ["mat-menu-item", "", "color", "primary", 1, "boton-navegacion"], [1, "mode"]], template: function NavbarComponent_Template(rf, ctx) { if (rf & 1) {
+NavbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: NavbarComponent, selectors: [["app-navbar"]], inputs: { actual: "actual" }, decls: 3, vars: 2, consts: [["class", "navbar", 4, "ngIf"], [4, "ngIf"], [1, "navbar"], [1, "botones-navbar"], ["mat-button", "", "color", "primary", 1, "boton-navegacion"], ["href", "#home"], ["href", "#formacion"], ["href", "#experiencia"], ["href", "#contacto"], [1, "themeSlide"], [1, "sun"], [3, "ngModel", "click", "ngModelChange"], [1, "moon"], [1, "menu"], ["mat-icon-button", "", 1, "menuIcon", 3, "matMenuTriggerFor"], ["mat-mini-fab", "", "color", "primary", 1, "boton-navegacion", 3, "click"], ["class", "mode", 4, "ngIf"], ["menu", "matMenu"], ["mat-menu-item", "", "color", "primary", 1, "boton-navegacion"], [1, "mode"]], template: function NavbarComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, NavbarComponent_div_1_Template, 20, 1, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, NavbarComponent_div_2_Template, 22, 3, "div", 1);
