@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Dancing+Script&display=swap');
 
 //variables
-// $bodyBackground : darkblue;
 $bodyBackground: var(--bodyBackground);
 $title: var(--title);
 $textColor: var(--textColor);
@@ -16,7 +15,6 @@ $allan: 'Allan', cursive;
 $dancing: 'Dancing Script', cursive;
 $size: 300px;
 
-
 body {
   padding-top: 0px;
   padding-left: 0px;
@@ -26,7 +24,7 @@ body {
   background-color: $bodyBackground;
 }
 
-.text {
+.text, td {
   color: $textColor;
 }
 
@@ -41,7 +39,29 @@ body {
   color: $modeColor;
 }
 
-@media (max-width: 780px)  {
+.moon, .sun {
+  padding: 3px;
+}
+
+.moon {
+  color: white;
+}
+
+.sun {
+  color: yellow;
+}
+
+.themeSlide {
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 900px)  {
+
+  .cardFormacion {
+    margin-top: 5%;
+  }
 
   .iconoContacto {
     font-size: x-large;
@@ -77,7 +97,7 @@ body {
 
 }
 
-@media (min-width: 780px) {
+@media (min-width: 900px) {
 
   .iconoContacto {
     font-size: x-large;
@@ -203,7 +223,6 @@ h4 {
 .cardFormacion {
   width: auto;
   box-shadow: 10px 30px 30px rgb(167, 66, 66);
-  margin-top: 5%;
   background-color: $formacionColor;
 }
 
