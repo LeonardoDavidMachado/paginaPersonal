@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   contacto = false;
   isMobile: boolean = false;
   isDark = true;
+  isChecked = false;
 
   constructor(
     private mobileDetector: MobileDetectorService,
@@ -60,6 +61,7 @@ export class NavbarComponent implements OnInit {
   }
 
   changeTheme() {
+    this.isChecked = !this.isChecked;
     this.isDark = this.themeChanger.changeTheme();
   }
 

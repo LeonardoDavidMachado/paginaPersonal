@@ -4,9 +4,8 @@
             <h2 class="titulo">Formación</h2>
         </div>
         <div *ngIf="!isMobile">
-            <mat-tab-group backgroundColor="accent">
+            <mat-tab-group backgroundColor="warn">
                 <mat-tab label="UNIVERSITARIA Y CURSOS">
-                    <br /><br />
                     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                         <ng-container matColumnDef="nombre">
                             <th class="encabezado" mat-header-cell *matHeaderCellDef> Nombre </th>
