@@ -5,10 +5,13 @@
       <button mat-button color="primary" class="boton-navegacion"> <a href="#formacion">Formación</a> </button>
       <button mat-button color="primary" class="boton-navegacion"><a href="#experiencia">Experiencia</a> </button>
       <button mat-button color="primary" class="boton-navegacion"><a href="#contacto">Contacto</a></button>
-      <button mat-button color="primary" class="boton-navegacion" (click)="changeTheme()">
-        <mat-icon class="mode" *ngIf="!isDark">dark_mode</mat-icon>
-        <mat-icon class="mode" *ngIf="isDark">light_mode</mat-icon>
-      </button>
+      <!-- <button mat-button color="primary" class="boton-navegacion" (click)="changeTheme()"> -->
+        <div class="themeSlide">
+          <mat-icon class="sun">light_mode</mat-icon>
+          <mat-slide-toggle (click)="changeTheme()" [(ngModel)]="isChecked"></mat-slide-toggle>
+          <mat-icon class="moon">dark_mode</mat-icon>
+        </div>
+      <!-- </button> -->
     </div>
   </div>
 
@@ -17,7 +20,7 @@
       <button class="menuIcon" mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
-      <button mat-mini-fab color="warn" class="boton-navegacion" (click)="changeTheme()">
+      <button mat-mini-fab color="primary" class="boton-navegacion" (click)="changeTheme()">
         <mat-icon class="mode" *ngIf="!isDark">dark_mode</mat-icon>
         <mat-icon class="mode" *ngIf="isDark">light_mode</mat-icon>
       </button>
