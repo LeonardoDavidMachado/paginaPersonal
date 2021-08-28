@@ -88,7 +88,7 @@
                     <br />
                 </div>
             </mat-card>
-            <mat-card class="cardFormacion">
+            <mat-card [@slideStatus]="status" class="box" >
                 <div class="botones-slider">
                     <button class="botonSlider" mat-fab (click)="change(0)">
                         <mat-icon class="sliderArrow">arrow_back</mat-icon>

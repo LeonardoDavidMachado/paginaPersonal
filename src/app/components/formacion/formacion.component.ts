@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Formacion } from '../../api/interfaces';
 import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
+import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
 
 const FORMACION: Formacion[] = [
   { posicion: 1, nombre: 'INGENIERIA EN SISTEMAS', establecimiento: 'UTN FRBA', fechaInicio: '2021', fechaFin: '', logo: 'UTNFRBA.png', },
@@ -14,7 +15,36 @@ const FORMACION: Formacion[] = [
 @Component({
   selector: 'app-formacion',
   templateUrl: './formacion.component.html',
-  styleUrls: ['./formacion.component.scss']
+  styleUrls: ['./formacion.component.scss'],
+  animations: [
+    trigger('slideStatus', [
+      state('inactive', style({ backgroundColor: 'darkblue' })),
+      state('active', style({ backgroundColor: 'black' })),
+
+      transition('* => active', [
+        animate('2s', keyframes([
+          style({ backgroundColor: 'darkblue', offset: 0}),
+          style({ backgroundColor: '#8823cc', offset: 0.8}),
+          style({ backgroundColor: 'black', offset: 1.0})
+        ])),
+      ]),
+      transition('* => inactive', [
+        animate('2s', keyframes([
+          style({ backgroundColor: 'black', offset: 0}),
+          style({ backgroundColor: '#8823cc', offset: 0.2}),
+          style({ backgroundColor: 'darkblue', offset: 1.0})
+        ]))
+      ]),
+
+      transition('* => active', [
+        animate('2s', keyframes([
+          style({ backgroundColor: 'black' }),
+          style({ backgroundColor: 'red' }),
+          style({ backgroundColor: 'darkblue' })
+        ]))
+      ]),
+    ])
+  ]
 })
 export class FormacionComponent implements OnInit {
 
@@ -25,6 +55,7 @@ export class FormacionComponent implements OnInit {
   frameTec = ["Node.js", "Express", "React", "React Native", "Angular", "Material", "Ionic", "Cordova", "Selenium", "Docker"];
   position= 0;
   isMobile: boolean = false;
+  status: 'active' | 'inactive' = 'inactive';
   constructor(
     private mobileDetector: MobileDetectorService,
   ) { }
@@ -32,6 +63,15 @@ export class FormacionComponent implements OnInit {
   ngOnInit(): void {
     this.isMobile = this.mobileDetector.isMobile();
   }
+
+  toggleAnimation() {
+    if (this.status === 'active') {
+      this.status = 'inactive';
+    } else {
+      this.status = 'active';
+    }
+  }
+
 
   change(destiny: number) {
     const BACK = 0;
@@ -55,7 +95,7 @@ export class FormacionComponent implements OnInit {
         break;
       }
     }
-
+    this.toggleAnimation();
   }
 
 }
