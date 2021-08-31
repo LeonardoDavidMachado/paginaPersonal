@@ -17,32 +17,15 @@ const FORMACION: Formacion[] = [
   templateUrl: './formacion.component.html',
   styleUrls: ['./formacion.component.scss'],
   animations: [
-    trigger('slideStatus', [
-      state('inactive', style({ backgroundColor: 'darkblue' })),
-      state('active', style({ backgroundColor: 'black' })),
-
-      transition('* => active', [
-        animate('2s', keyframes([
-          style({ backgroundColor: 'darkblue', offset: 0}),
-          style({ backgroundColor: '#8823cc', offset: 0.8}),
-          style({ backgroundColor: 'black', offset: 1.0})
-        ])),
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(100)
       ]),
-      transition('* => inactive', [
-        animate('2s', keyframes([
-          style({ backgroundColor: 'black', offset: 0}),
-          style({ backgroundColor: '#8823cc', offset: 0.2}),
-          style({ backgroundColor: 'darkblue', offset: 1.0})
-        ]))
-      ]),
-
-      transition('* => active', [
-        animate('2s', keyframes([
-          style({ backgroundColor: 'black' }),
-          style({ backgroundColor: 'red' }),
-          style({ backgroundColor: 'darkblue' })
-        ]))
-      ]),
+      transition('* => void', [
+        animate(500, style({ transform: 'translateX(100%)' }))
+      ])
     ])
   ]
 })
@@ -55,7 +38,6 @@ export class FormacionComponent implements OnInit {
   frameTec = ["Node.js", "Express", "React", "React Native", "Angular", "Material", "Ionic", "Cordova", "Selenium", "Docker"];
   position= 0;
   isMobile: boolean = false;
-  status: 'active' | 'inactive' = 'inactive';
   constructor(
     private mobileDetector: MobileDetectorService,
   ) { }
@@ -63,15 +45,6 @@ export class FormacionComponent implements OnInit {
   ngOnInit(): void {
     this.isMobile = this.mobileDetector.isMobile();
   }
-
-  toggleAnimation() {
-    if (this.status === 'active') {
-      this.status = 'inactive';
-    } else {
-      this.status = 'active';
-    }
-  }
-
 
   change(destiny: number) {
     const BACK = 0;
@@ -95,7 +68,6 @@ export class FormacionComponent implements OnInit {
         break;
       }
     }
-    this.toggleAnimation();
   }
 
 }
