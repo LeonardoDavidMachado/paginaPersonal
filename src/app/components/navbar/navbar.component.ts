@@ -1,11 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
 import { ThemeChangerService } from '../../services/themeChanger/theme-changer.service';
+import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  animations: [
+    trigger('insertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('3s', style({ opacity: 1 })),
+      ])
+    ])
+  ]
 })
 export class NavbarComponent implements OnInit {
 

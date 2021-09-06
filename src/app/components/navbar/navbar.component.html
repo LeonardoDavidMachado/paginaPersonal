@@ -1,5 +1,5 @@
 <nav>
-  <div *ngIf="!isMobile" class="navbar">
+  <div @insertRemoveTrigger *ngIf="!isMobile" class="navbar">
     <div class="botones-navbar">
       <button mat-button color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
       <button mat-button color="primary" class="boton-navegacion"> <a href="#formacion">Formación</a> </button>
@@ -21,8 +21,8 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <button mat-mini-fab color="primary" class="boton-navegacion" (click)="changeTheme()">
-        <mat-icon class="mode" *ngIf="!isDark">dark_mode</mat-icon>
-        <mat-icon class="mode" *ngIf="isDark">light_mode</mat-icon>
+        <mat-icon @insertRemoveTrigger class="mode" *ngIf="!isDark">dark_mode</mat-icon>
+        <mat-icon @insertRemoveTrigger class="mode" *ngIf="isDark">light_mode</mat-icon>
       </button>
     </div>
 
