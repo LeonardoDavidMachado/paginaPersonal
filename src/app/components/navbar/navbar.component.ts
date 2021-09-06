@@ -8,11 +8,11 @@ import { trigger, transition, state, animate, style, keyframes } from '@angular/
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   animations: [
-    trigger('insertRemoveTrigger', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('3s', style({ opacity: 1 })),
-      ])
+      trigger('flyInTop', [
+        transition(':enter', [
+          style({ transform: 'translateY(-100%)' }),
+          animate('3s')
+        ]),
     ])
   ]
 })

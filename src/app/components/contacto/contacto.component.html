@@ -1,7 +1,7 @@
-<body>
-    <section inViewport
-    [inViewportOptions]="{ threshold: [0] }"
-    (inViewportAction)="onIntersection($event)">
+<body inViewport
+[inViewportOptions]="{ threshold: [0] }"
+(inViewportAction)="onIntersection($event)">
+    <section>
         <div class="centrado">
             <h1 class="titulo">Contacto</h1>
         </div>

@@ -1,5 +1,5 @@
 <nav>
-  <div @insertRemoveTrigger *ngIf="!isMobile" class="navbar">
+  <div @flyInTop *ngIf="!isMobile" class="navbar">
     <div class="botones-navbar">
       <button mat-button color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
       <button mat-button color="primary" class="boton-navegacion"> <a href="#formacion">Formación</a> </button>
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div *ngIf="isMobile">
+  <div  @flyInTop *ngIf="isMobile">
     <div class="menu">
       <button class="menuIcon" mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
