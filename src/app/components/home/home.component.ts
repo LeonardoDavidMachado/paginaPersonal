@@ -1,6 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
-import { trigger, transition, animate, style } from '@angular/animations';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { changeOpacityAnimation } from '../../animations';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,18 @@ import { trigger, transition, animate, style } from '@angular/animations';
   animations: [
     trigger('insertRemoveTrigger', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('5s', style({ opacity: 1 })),
+        useAnimation(changeOpacityAnimation, {
+          params: {
+            time: '5s'
+          }
+        })
       ])
     ])
-    ]
+  ]
 })
 export class HomeComponent implements OnInit {
 
-  home=1;
+  home = 1;
   isMobile: boolean = false;
   isShown: boolean = true
   animation = "";
@@ -31,6 +35,6 @@ export class HomeComponent implements OnInit {
 
   public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
     this.isShown = visible;
-}
+  }
 
 }

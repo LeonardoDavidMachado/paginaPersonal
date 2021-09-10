@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Contacto } from '../../api/interfaces';
-import { trigger, transition, animate, style} from '@angular/animations';
+import { trigger, transition, useAnimation} from '@angular/animations';
+import { flyInOutAnimation } from '../../animations';
 
 const CONTACTO: Contacto[] =[
   { descripcion: "Linkedin", enlace: "https://www.linkedin.com/in/leonardo-david-machado-b119681b3/", logo: "linkedin"},
@@ -16,9 +17,12 @@ const CONTACTO: Contacto[] =[
   animations: [
     trigger('flyInOut', [
       transition(':enter', [
-        style({ transform: 'translateX(-100%)' }),
-        animate('3s')
-      ]),
+        useAnimation(flyInOutAnimation, {
+          params: {
+            time: '3s'
+          }
+        })
+      ])
     ])
   ]
 })
