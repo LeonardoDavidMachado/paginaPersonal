@@ -11,6 +11,8 @@ import { FormacionComponent } from './components/formacion/formacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
+import { InViewportModule } from 'ng-in-viewport';
+
 import { MaterialModule } from './material.module';
 
 
@@ -28,7 +30,8 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    InViewportModule
   ],
   providers: [],
   bootstrap: [AppComponent]

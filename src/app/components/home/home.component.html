@@ -1,7 +1,10 @@
-<section>
+<section  inViewport
+[inViewportOptions]="{ threshold: [0] }"
+(inViewportAction)="onIntersection($event)">
+  <!-- <button (click)="show()">show</button> -->
   <div id="home">
     <div class="centrado">
-      <h1 class="bienvenido">¡Bienvenido a mi página web!</h1>
+      <h1  @insertRemoveTrigger *ngIf="isShown" class="bienvenido">¡Bienvenido a mi página web!</h1>
     </div>
     <div class="cardCentrada">
         <h2 class="text">Sobre mí y esta página</h2>
@@ -14,7 +17,7 @@
             Acá podés encontrar información sobre mí y ver una muestra de mi trabajo, está
             creada con Angular Material. Se puede ver el código en mi <a class="enlace" target="_blank" href="https://github.com/LeonardoDavidMachado/paginaPersonal">github</a>.
           </p>
-          <img class="mitad" src="./assets/angular.svg">
+          <img  @insertRemoveTrigger *ngIf="isShown" class="mitad" src="./assets/angular.svg">
         </div>
       <p class="text">¡No te olvides de visitarla con tu
       <span *ngIf="!isMobile">celular</span>

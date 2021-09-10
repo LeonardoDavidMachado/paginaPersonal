@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Formacion } from '../../api/interfaces';
 import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
+import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
 
 const FORMACION: Formacion[] = [
   { posicion: 1, nombre: 'INGENIERIA EN SISTEMAS', establecimiento: 'UTN FRBA', fechaInicio: '2021', fechaFin: '', logo: 'UTNFRBA.png', },
@@ -14,7 +15,19 @@ const FORMACION: Formacion[] = [
 @Component({
   selector: 'app-formacion',
   templateUrl: './formacion.component.html',
-  styleUrls: ['./formacion.component.scss']
+  styleUrls: ['./formacion.component.scss'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(500, style({ transform: 'translateX(100%)' }))
+      ])
+    ])
+  ]
 })
 export class FormacionComponent implements OnInit {
 
@@ -55,7 +68,6 @@ export class FormacionComponent implements OnInit {
         break;
       }
     }
-
   }
 
 }

@@ -1,11 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MobileDetectorService } from '../../services/mobileDetector/mobile-detector.service';
 import { ThemeChangerService } from '../../services/themeChanger/theme-changer.service';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { flyInTopAnimation , rotateAnimation } from '../../animations';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  animations: [
+      trigger('flyInTop', [
+        transition(':enter', [
+          useAnimation(flyInTopAnimation)
+        ]),
+    ]),
+    trigger('rotatedState', [
+      transition('* => *', [
+        useAnimation(rotateAnimation)
+      ]),
+  ])
+  ]
 })
 export class NavbarComponent implements OnInit {
 
@@ -63,6 +77,13 @@ export class NavbarComponent implements OnInit {
   changeTheme() {
     this.isChecked = !this.isChecked;
     this.isDark = this.themeChanger.changeTheme();
+    this.rotate();
+  }
+
+  state: string = 'default';
+  rotate() {
+    console.log("aaa")
+      this.state = (this.state === 'default' ? 'rotated' : 'default');
   }
 
 }
