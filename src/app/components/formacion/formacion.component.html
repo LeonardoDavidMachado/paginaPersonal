@@ -72,7 +72,7 @@
         <div *ngIf="isMobile">
 
             <mat-card class="cardFormacion">
-                <mat-card-title>Universitaria y cursos</mat-card-title>
+                <mat-card-title class="text">Universitaria y cursos</mat-card-title>
                 <div *ngFor="let data of dataSource">
                     <hr />
                     {{data.nombre}}
@@ -98,7 +98,7 @@
                     </button>
                 </div>
                 <div [@flyInOut]="'in'" *ngIf="position == 0">
-                    <mat-card-title class="chartreuse">Lenguajes</mat-card-title>
+                    <mat-card-title class="text">Lenguajes</mat-card-title>
                     <div *ngFor="let lenguaje of lenguajes">
                         <ul>
                             <li [@flyInOut]="'in'">{{lenguaje}}</li>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div [@flyInOut]="'in'" *ngIf="position == 1">
-                    <mat-card-title class="chartreuse">Bases de datos</mat-card-title>
+                    <mat-card-title class="text">Bases de datos</mat-card-title>
                     <div *ngFor="let base of basesDeDatos">
                         <ul>
                             <li>{{base}}</li>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div [@flyInOut]="'in'" *ngIf="position == 2">
-                    <mat-card-title class="chartreuse">Frameworks y tecnologías</mat-card-title>
+                    <mat-card-title class="text">Frameworks y tecnologías</mat-card-title>
                     <div *ngFor="let item of frameTec">
                         <ul>
                             <li>{{item}}</li>

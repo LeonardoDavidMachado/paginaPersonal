@@ -32,6 +32,7 @@ export class ThemeChangerService {
     document.documentElement.style.setProperty('--shadowColor', 'white');
     document.documentElement.style.setProperty('--iconColor', 'darkblue');
     document.documentElement.style.setProperty('--modeColor', 'yellow');
+    document.documentElement.style.setProperty('--paginatorColor', '#f03a3a');
   }
 
   ligthTheme() {
@@ -43,6 +44,7 @@ export class ThemeChangerService {
     document.documentElement.style.setProperty('--shadowColor', '#50096e');
     document.documentElement.style.setProperty('--iconColor', 'black');
     document.documentElement.style.setProperty('--modeColor', 'white');
+    document.documentElement.style.setProperty('--paginatorColor', '#174185');
   }
 
 }
