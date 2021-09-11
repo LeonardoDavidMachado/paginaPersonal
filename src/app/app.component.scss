@@ -5,6 +5,7 @@
 $bodyBackground: var(--bodyBackground);
 $title: var(--title);
 $textColor: var(--textColor);
+$paginatorcolor: var(--paginatorColor);
 $subtitleColor: var(--subtitleColor);
 $formacionColor: var(--formacionColor);
 $shadowColor: var(--shadowColor);
@@ -22,10 +23,10 @@ body {
   min-height: 100%;
   height: auto;
   background-color: $bodyBackground;
+  transition:  background-color 3s linear;
 }
 
-
-.text, td {
+.text, td, li, .menuIcon {
   color: $textColor;
 }
 
@@ -111,7 +112,7 @@ body {
   }
 
   .contactoLista {
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -123,8 +124,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0px 10px 0px;
     z-index: 2;
     box-shadow: 0px 15px 20px rgb(36, 170, 43);
   }
@@ -162,10 +162,13 @@ body {
     }
 }
 
+.card, .cardCentrada {
+  margin-top: 10%;
+}
+
 .card {
   max-width: 400px;
   box-shadow: 10px 30px 30px $shadowColor;
-  margin-top: 10%;
   background-color: $formacionColor;
 }
 
@@ -173,7 +176,6 @@ body {
   margin: auto;
   width: 50%;
   min-width: 250px;
-  margin-top: 10%;
   background-color: transparent;
 }
 
@@ -191,13 +193,11 @@ table {
   flex-direction: row;
   justify-content: space-around;
   align-items: baseline;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 5%;
+  padding: 0% 10% 5% 10%;
 }
 
 .paginator {
-  color: darkorange;
+  color: $paginatorcolor;
 }
 
 h4 {
@@ -207,7 +207,6 @@ h4 {
 .botonSlider {
   background-color: white;
 }
-
 
 .barra {
   width: 20%;
@@ -241,8 +240,7 @@ h4 {
 }
 
 .texto {
-  padding-top: 25%;
-  padding-left: 25%;
+  padding: 25% 0% 25% 0%;
   width: 200px;
   height: 200px;
 }
@@ -269,7 +267,6 @@ h4 {
   margin-left: 20%;
 }
 
-
 .contactoItem {
   display: flex;
   flex-direction: row;
@@ -283,68 +280,4 @@ a {
 
 .enlace {
   color: rgba(44, 199, 134, 0.781);
-}
-
-.menuIcon {
-  color: $textColor;
-}
-
-.roll-in-left {
-	-webkit-animation: roll-in-left 2s ease-out both;
-	        animation: roll-in-left 2s ease-out both;
-}
-
-.roll-out-right {
-	-webkit-animation: roll-out-right 2s ease-in both;
-	        animation: roll-out-right 2s ease-in both;
-}
-
-@-webkit-keyframes roll-in-left {
-  0% {
-    -webkit-transform: translateX(-800px) rotate(-540deg);
-            transform: translateX(-800px) rotate(-540deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-}
-@keyframes roll-in-left {
-  0% {
-    -webkit-transform: translateX(-800px) rotate(-540deg);
-            transform: translateX(-800px) rotate(-540deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes roll-out-right {
-  0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(1000px) rotate(540deg);
-            transform: translateX(1000px) rotate(540deg);
-    opacity: 0;
-  }
-}
-@keyframes roll-out-right {
-  0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(1000px) rotate(540deg);
-            transform: translateX(1000px) rotate(540deg);
-    opacity: 0;
-  }
 }

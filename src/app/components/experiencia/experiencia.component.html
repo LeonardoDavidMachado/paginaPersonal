@@ -12,8 +12,8 @@
         <div class="responsive" *ngFor="let experiencia of experiencias">
             <mat-card class="card">
                 <div class="header-card">
-                    <mat-card-title class="empresa" class="text">{{experiencia.empresa}}</mat-card-title>
-                    <mat-card-subtitle class="puesto" class="text">Puesto: {{experiencia.puesto}}</mat-card-subtitle>
+                    <mat-card-title class="empresa">{{experiencia.empresa}}</mat-card-title>
+                    <mat-card-subtitle class="puesto">Puesto: {{experiencia.puesto}}</mat-card-subtitle>
                 </div>
                 <img src="./assets/{{experiencia.logo}}">
                 <p class="text">Inicio: {{experiencia.inicio}} <span *ngIf="experiencia.fin.lenght > 0">- Fin: {{experiencia.fin}} </span></p>
