@@ -9,6 +9,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatMenuModule,
     MatTabsModule,
     MatTableModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
 
   ]
 })

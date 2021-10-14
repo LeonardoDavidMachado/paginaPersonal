@@ -14,6 +14,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { InViewportModule } from 'ng-in-viewport';
 
 import { MaterialModule } from './material.module';
+import { PopUpComponent } from './components/pop-up/pop-up.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MaterialModule } from './material.module';
     HomeComponent,
     FormacionComponent,
     ExperienciaComponent,
-    ContactoComponent
+    ContactoComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,

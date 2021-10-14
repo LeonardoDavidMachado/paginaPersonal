@@ -13,10 +13,10 @@
                         E-mail</a> </mat-card-subtitle>
             </div>
             <div *ngFor="let contacto of contactos">
-                <div class="contactoItem">
+                <div class="contactoItem" (click)="openDialog(contacto)">
                     <mat-icon class="iconoContacto" [svgIcon]=contacto.logo></mat-icon>
-                    <mat-card-subtitle> <a target="_blank" class="text" href={{contacto.enlace}}>
-                            {{contacto.descripcion}}</a> </mat-card-subtitle>
+                    <mat-card-subtitle  class="text">
+                            {{contacto.descripcion}}</mat-card-subtitle>
                 </div>
             </div>
         </div>

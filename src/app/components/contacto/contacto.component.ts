@@ -4,6 +4,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { Contacto } from '../../api/interfaces';
 import { trigger, transition, useAnimation} from '@angular/animations';
 import { flyInOutAnimation } from '../../animations';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpComponent } from '../pop-up/pop-up.component';
 
 const CONTACTO: Contacto[] =[
   { descripcion: "Linkedin", enlace: "https://www.linkedin.com/in/leonardo-david-machado-b119681b3/", logo: "linkedin"},
@@ -28,7 +30,9 @@ const CONTACTO: Contacto[] =[
 })
 export class ContactoComponent implements OnInit {
 
-  constructor( private matIconRegistry: MatIconRegistry, 
+  constructor( 
+    private dialog: MatDialog,
+    private matIconRegistry: MatIconRegistry, 
     private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       `linkedin`,
@@ -54,5 +58,18 @@ export class ContactoComponent implements OnInit {
   public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
     this.inView = visible;
 }
+
+openDialog(contacto: Contacto) {
+  this.dialog.open(PopUpComponent, {
+    backdropClass: 'backdropBackground',
+    data: {
+      contacto
+    },
+    height: '200px',
+    width: '350px',
+  });
+}
+
+
 
 }
