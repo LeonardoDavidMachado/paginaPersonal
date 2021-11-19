@@ -46,6 +46,11 @@ export class FormacionComponent implements OnInit {
     this.isMobile = this.mobileDetector.isMobile();
   }
 
+  setValue() {
+    this.position = 2;
+    //added for testing
+  }
+
   change(destiny: number): number {
     const BACK = 0;
     const FORWARD = 1;
@@ -68,7 +73,7 @@ export class FormacionComponent implements OnInit {
         break;
       }
     }
-    return this.position;
+    return this.position; //added for testing
   }
 
 }

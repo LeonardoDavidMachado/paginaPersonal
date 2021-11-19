@@ -32,4 +32,18 @@ fdescribe('FormacionComponent', () => {
     let position = component.change(0);
     expect(position).toBe(0);
   });
+
+
+  it('should change position in back after setting global value',() => {
+    component.setValue();
+    let position = component.change(0);
+    expect(position).toBe(1);
+  });
+
+  it('should change position in forward after setting global value',() => {
+    component.setValue();
+    let position = component.change(1);
+    expect(position).toBe(2);
+  });
+
 });
