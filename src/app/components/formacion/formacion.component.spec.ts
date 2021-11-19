@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormacionComponent } from './formacion.component';
 
-describe('FormacionComponent', () => {
+fdescribe('FormacionComponent', () => {
   let component: FormacionComponent;
   let fixture: ComponentFixture<FormacionComponent>;
 
@@ -21,5 +21,15 @@ describe('FormacionComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  }); 
+  });
+
+  it('should change position in forward', () => {
+    let position = component.change(1);
+    expect(position).toBe(1);
+  });
+
+  it('should not change position in back',() => {
+    let position = component.change(0);
+    expect(position).toBe(0);
+  });
 });
