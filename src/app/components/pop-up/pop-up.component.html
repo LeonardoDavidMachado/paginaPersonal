@@ -1,0 +1,11 @@
+<div class="dialog">
+    <h2 mat-dialog-title>Saliendo del sitio...</h2>
+    Al presionar en continuar será redirigido a {{data.contacto.descripcion}}.
+    <br/><br/>
+        <mat-dialog-actions>
+            <button mat-button mat-dialog-close>Cancelar</button>
+            <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial><a target="_blank" href={{data.contacto.enlace}}>
+                CONTINUAR</a></button>
+        </mat-dialog-actions>
+
+</div>

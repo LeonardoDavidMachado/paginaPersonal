@@ -1,2 +1,24 @@
-<app-navbar></app-navbar>
-<p>contacto works!</p>
+<body inViewport
+[inViewportOptions]="{ threshold: [0] }"
+(inViewportAction)="onIntersection($event)">
+    <section>
+        <div class="centrado">
+            <h1 class="titulo">Contacto</h1>
+        </div>
+        <br />
+        <div  @flyInOut *ngIf="inView" class="contactoLista">
+            <div class="contactoItem">
+                <mat-icon class="iconoContacto" svgIcon="email"></mat-icon>
+                <mat-card-subtitle> <a target="_blank" class="text" href="mailto:leondav@hotmail.com">
+                        E-mail</a> </mat-card-subtitle>
+            </div>
+            <div *ngFor="let contacto of contactos">
+                <div class="contactoItem" (click)="openDialog(contacto)">
+                    <mat-icon class="iconoContacto" [svgIcon]=contacto.logo></mat-icon>
+                    <mat-card-subtitle  class="text">
+                            {{contacto.descripcion}}</mat-card-subtitle>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

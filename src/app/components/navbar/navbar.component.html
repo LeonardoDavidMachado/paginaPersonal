@@ -1,12 +1,36 @@
 <nav>
-  <mat-toolbar>
+  <div @flyInTop *ngIf="!isMobile" class="navbar">
     <div class="botones-navbar">
-      <button mat-raised-button routerLink="" color="primary" class="boton-navegacion">Home</button>
-      <button mat-raised-button routerLink="/formacion" color="primary" class="boton-navegacion">Formacion</button>
-      <button mat-raised-button routerLink="/experiencia" color="primary" class="boton-navegacion">Experiencia</button>
-      <button mat-raised-button routerLink="/contacto" color="primary" class="boton-navegacion">Contacto</button>
-      <router-outlet #outlet="outlet"></router-outlet>
+      <button mat-button color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
+      <button mat-button color="primary" class="boton-navegacion"> <a href="#formacion">Formación</a> </button>
+      <button mat-button color="primary" class="boton-navegacion"><a href="#experiencia">Experiencia</a> </button>
+      <button mat-button color="primary" class="boton-navegacion"><a href="#contacto">Contacto</a></button>
+      <!-- <button mat-button color="primary" class="boton-navegacion" (click)="changeTheme()"> -->
+        <div  class="themeSlide">
+          <mat-icon [@rotatedState]='state' class="sun">light_mode</mat-icon>
+          <mat-slide-toggle (click)="changeTheme()" [(ngModel)]="isChecked"></mat-slide-toggle>
+          <mat-icon [@rotatedState]='state' class="moon">dark_mode</mat-icon>
+        </div>
+      <!-- </button> -->
     </div>
-  </mat-toolbar>
-</nav>
+  </div>
 
+  <div  @flyInTop *ngIf="isMobile">
+    <div class="menu">
+      <button class="menuIcon" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button [@rotatedState]='state' mat-mini-fab color="primary" class="boton-navegacion" (click)="changeTheme()">
+        <mat-icon class="mode" *ngIf="!isDark">dark_mode</mat-icon>
+        <mat-icon class="mode" *ngIf="isDark">light_mode</mat-icon>
+      </button>
+    </div>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item color="primary" class="boton-navegacion"> <a href="#home">Home</a></button>
+      <button mat-menu-item color="primary" class="boton-navegacion"><a href="#formacion">Formacion</a></button>
+      <button mat-menu-item color="primary" class="boton-navegacion"><a href="#experiencia">Experiencia</a></button>
+      <button mat-menu-item color="primary" class="boton-navegacion"><a href="#contacto">Contacto</a></button>
+    </mat-menu>
+  </div>
+</nav>

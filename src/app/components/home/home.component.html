@@ -1,20 +1,28 @@
-<app-navbar></app-navbar>
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
+<section  inViewport
+[inViewportOptions]="{ threshold: [0] }"
+(inViewportAction)="onIntersection($event)">
+  <!-- <button (click)="show()">show</button> -->
+  <div id="home">
+    <div class="centrado">
+      <h1  @insertRemoveTrigger *ngIf="isShown" class="bienvenido">¡Bienvenido a mi página web!</h1>
+    </div>
+    <div class="cardCentrada">
+        <h2 class="text">Sobre mí y esta página</h2>
+        <h4>
+          Soy un desarrollador fullstack y técnico electrónico con experiencia laboral en frontend.
+        </h4>
+        <br />
+        <div class="dosColumnas">
+          <p class="text">
+            Acá podés encontrar información sobre mí y ver una muestra de mi trabajo, está
+            creada con Angular Material. Se puede ver el código en mi <a class="enlace" target="_blank" href="https://github.com/LeonardoDavidMachado/paginaPersonal">github</a>.
+          </p>
+          <img  @insertRemoveTrigger *ngIf="isShown" class="mitad" src="./assets/angular.svg">
+        </div>
+      <p class="text">¡No te olvides de visitarla con tu
+      <span *ngIf="!isMobile">celular</span>
+      <span *ngIf="isMobile">pc</span> para verla en la otra versión!
     </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+    </div>
+  </div>
+</section>

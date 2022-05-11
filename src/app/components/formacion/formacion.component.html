@@ -1,2 +1,127 @@
-<app-navbar></app-navbar>
-<p>formacion works!</p>
+<body>
+    <section>
+        <div class="centrado">
+            <h2 class="titulo">Formación</h2>
+        </div>
+        <div *ngIf="!isMobile">
+            <mat-tab-group backgroundColor="warn">
+                <mat-tab label="UNIVERSITARIA Y CURSOS">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="nombre">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Nombre </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="establecimiento">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Establecimiento </th>
+                            <td mat-cell *matCellDef="let element"> {{element.establecimiento}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fechaInicio">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fechaFin">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Fecha de finalización </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="logo">
+                            <th class="encabezado" mat-header-cell *matHeaderCellDef> Logo </th>
+
+                            <td mat-cell *matCellDef="let element"><img class="logo" src="./assets/{{element.logo}}">
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </mat-tab>
+                <mat-tab class="label" label="LENGUAJES">
+                    <mat-card class="cardFormacion">
+                        <div *ngFor="let lenguaje of lenguajes">
+                            <ul>
+                                <li>{{lenguaje}}</li>
+                            </ul>
+                        </div>
+                    </mat-card>
+                </mat-tab>
+                <mat-tab class="label" label="BASES DE DATOS">
+                    <mat-card class="cardFormacion">
+                        <div *ngFor="let base of basesDeDatos">
+                            <ul>
+                                <li>{{base}}</li>
+                            </ul>
+                        </div>
+                    </mat-card>
+                </mat-tab>
+                <mat-tab class="label" label="FRAMEWORKS Y TECNOLOGIAS">
+                    <mat-card class="cardFormacion">
+                        <ul>
+                            <div *ngFor="let item of frameTec">
+                                <li>{{item}}</li>
+                                <br />
+                            </div>
+                        </ul>
+                    </mat-card>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+        <div *ngIf="isMobile">
+
+            <mat-card class="cardFormacion">
+                <mat-card-title class="text">Universitaria y cursos</mat-card-title>
+                <div *ngFor="let data of dataSource">
+                    <hr />
+                    {{data.nombre}}
+                    <div>
+                        {{data.establecimiento}}
+                        <br />
+                        {{data.fechaInicio}} - {{data.fechaFin}}
+                        <br />
+                    </div>
+                    <img mat-card-image class="logo" src="./assets/{{data.logo}}">
+                    <br />
+                    <br />
+                </div>
+            </mat-card>
+            <mat-card  class="cardFormacion">
+                <div class="botones-slider">
+                    <button class="botonSlider" mat-fab (click)="change(0)">
+                        <mat-icon class="sliderArrow">arrow_back</mat-icon>
+                    </button>
+                    <p [@slideStatus]="status" class="paginator">{{position+1}}/{{3}}</p>
+                    <button class="botonSlider" mat-fab (click)="change(1)">
+                        <mat-icon class="sliderArrow">arrow_forward</mat-icon>
+                    </button>
+                </div>
+                <div [@flyInOut]="'in'" *ngIf="position == 0">
+                    <mat-card-title class="text">Lenguajes</mat-card-title>
+                    <div *ngFor="let lenguaje of lenguajes">
+                        <ul>
+                            <li [@flyInOut]="'in'">{{lenguaje}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div [@flyInOut]="'in'" *ngIf="position == 1">
+                    <mat-card-title class="text">Bases de datos</mat-card-title>
+                    <div *ngFor="let base of basesDeDatos">
+                        <ul>
+                            <li>{{base}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div [@flyInOut]="'in'" *ngIf="position == 2">
+                    <mat-card-title class="text">Frameworks y tecnologías</mat-card-title>
+                    <div *ngFor="let item of frameTec">
+                        <ul>
+                            <li>{{item}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </section>
+</body>
